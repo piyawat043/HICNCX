@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Probe Step 2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('mainbg2.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .button {
+            width: 30%; /* ขยายขนาดปุ่มให้ใหญ่ขึ้น */
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .button:hover {
+            transform: scale(1.1); /* ขยายปุ่มเมื่อเมาส์ชี้ */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="joy3.png" class="button" onclick="xyzProbe2()">
+        <img src="camera3.png" class="button" onclick="openCamera()">
+    </div>
+
+    <script>
+        function xyzProbe2() {
+            window.location.href = 'gui_probestep3.html';
+        }
+        function openCamera() {
+            window.location.href = 'guicammain.html';
+        }
+    </script>
+</body>
+</html>

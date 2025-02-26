@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Xbox Controller Interface</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #controller {
+      position: relative;
+      width: 400px;
+      height: 227px; /* อัตราส่วนของรูปตัวอย่าง */
+      background: url('xbox-controller.png') no-repeat center center;
+      background-size: cover;
+      margin-top: 20px;
+    }
+    /* ปุ่ม A สมมุติว่าอยู่ตรงตำแหน่ง (x,y) ที่กำหนด */
+    .button-a {
+      position: absolute;
+      left: 280px;
+      top: 130px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      /* แนะนำให้ใส่ background/opacity เพื่อ debug หรือคลิกให้ตรงจุด */
+      background-color: rgba(0,255,0,0.3);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <!-- วิดีโอ -->
+  <video id="myVideo" width="640" height="360" controls>
+    <source src="video.mp4" type="video/mp4" />
+    เบราว์เซอร์ของคุณไม่รองรับการแสดงวิดีโอแบบ HTML5
+  </video>
+
+  <!-- ภาพจอยพร้อมโซนปุ่ม -->
+  <div id="controller">
+    <div class="button-a" id="btnA"></div>
+    <!-- สามารถเพิ่มปุ่ม B, X, Y อื่น ๆ ได้ตามต้องการ -->
+  </div>
+
+  <script>
+    const videoElement = document.getElementById('myVideo');
+    const buttonA = document.getElementById('btnA');
+
+    // เมื่อผู้ใช้คลิกปุ่ม A ให้หยุด/เล่นวิดีโอเป็นตัวอย่าง
+    buttonA.addEventListener('click', () => {
+      if (videoElement.paused) {
+        videoElement.play();
+      } else {
+        videoElement.pause();
+      }
+    });
+  </script>
+</body>
+</html>

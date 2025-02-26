@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Sensor Interface</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('guitoolsensor.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Tahoma, sans-serif;
+        }
+        .button {
+            position: absolute;
+            font-size: 15px;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+        #button20 {
+            left: 237px;
+            top: 636px;
+            width: 234px;
+            height: 50px;
+        }
+        #button21 {
+            left: 744px;
+            top: 635px;
+            width: 234px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button class="button" id="button20" onclick="processNormal()">ตำแหน่งปกติ</button>
+    <button class="button" id="button21" onclick="processMeasurement()">ตำแหน่งวัดเครื่องมือ</button>
+
+    <script>
+        function processNormal() {
+            alert('เริ่มกระบวนการตำแหน่งปกติ');
+            // แทนที่ด้วยฟังก์ชันจริง เช่น window.open('process_normal.html', '_blank');
+        }
+        function processMeasurement() {
+            alert('เริ่มกระบวนการตำแหน่งวัดเครื่องมือ');
+            // แทนที่ด้วยฟังก์ชันจริง เช่น window.open('process_measurement.html', '_blank');
+        }
+    </script>
+</body>
+</html>

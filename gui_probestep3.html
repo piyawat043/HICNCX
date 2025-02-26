@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Probe Step 3</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('joybg.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+        }
+        .button {
+            width: 60%; /* ปรับขนาดปุ่มให้เหมาะสม */
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .button:hover {
+            transform: scale(1.1); /* ขยายปุ่มเมื่อเมาส์ชี้ */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="zsave3d.png" class="button" onclick="pzSave()">
+        <img src="2p.png" class="button" onclick="probe3D()">
+        <img src="4pcon2.png" class="button" onclick="fourPointConner()">
+        <a href="Xyaxis02_preview.mp4" target="_blank">
+            <img src="6pcen2.png" class="button">
+        </a>
+        <img src="4pcen2.png" class="button" onclick="fourPointCenter()">
+        <img src="3p.png" class="button" onclick="threePointCircle()">
+    </div>
+
+    <script>
+        function pzSave() {
+            alert('บันทึกค่า Z');
+        }
+        function probe3D() {
+            alert('เริ่มกระบวนการโพรบ 3D');
+        }
+        function fourPointConner() {
+            alert('โพรบ 4 จุดที่มุม');
+        }
+        function fourPointCenter() {
+            alert('โพรบ 4 จุดที่ศูนย์กลาง');
+        }
+        function threePointCircle() {
+            alert('โพรบ 3 จุดที่วงกลม');
+        }
+    </script>
+</body>
+</html>

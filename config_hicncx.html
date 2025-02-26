@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit CNC Values</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .input-group {
+            margin: 10px;
+        }
+        .input-group label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .input-group input {
+            width: 150px;
+            height: 35px;
+            font-size: 14px;
+            padding: 5px;
+        }
+        .button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit CNC Values (mm)</h1>
+    <div class="input-group">
+        <label>X offset 3dprobe (mx1-mx2):</label>
+        <input type="text" id="Xoffset" placeholder="Enter X offset">
+    </div>
+    <div class="input-group">
+        <label>Y offset 3dprobe (my1-my2):</label>
+        <input type="text" id="Yoffset" placeholder="Enter Y offset">
+    </div>
+    <div class="input-group">
+        <label>AutoZ clear Z:</label>
+        <input type="text" id="Z" placeholder="Enter Z value">
+    </div>
+    <div class="input-group">
+        <label>Toolsetter auto:</label>
+        <input type="text" id="H" placeholder="Enter Toolsetter value">
+    </div>
+    <div class="input-group">
+        <label>Auto Z safe (Zsafe):</label>
+        <input type="text" id="Zsafe" placeholder="Enter Zsafe value">
+    </div>
+    <button class="button" onclick="saveValues()">Save</button>
+
+    <script>
+        function saveValues() {
+            let Xoffset = document.getElementById('Xoffset').value;
+            let Yoffset = document.getElementById('Yoffset').value;
+            let Z = document.getElementById('Z').value;
+            let H = document.getElementById('H').value;
+            let Zsafe = document.getElementById('Zsafe').value;
+            
+            if (Xoffset && Yoffset && Z && H && Zsafe) {
+                alert(`ค่าได้ถูกบันทึกเรียบร้อยแล้ว:\nX offset: ${Xoffset}\nY offset: ${Yoffset}\nZ: ${Z}\nToolsetter: ${H}\nZsafe: ${Zsafe}`);
+            } else {
+                alert('กรุณากรอกค่าทั้งหมดก่อนบันทึก');
+            }
+        }
+    </script>
+</body>
+</html>
