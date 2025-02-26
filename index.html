@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAWATDEE CNC USER INTERFACE</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('mainbg2.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            position: relative;
+            width: 90vw;
+            height: 90vh;
+            max-width: 1200px;
+            max-height: 720px;
+        }
+        .button {
+            position: absolute;
+            transition: transform 0.3s ease-in-out;
+        }
+        .button:hover {
+            transform: scale(1.1);
+        }
+        #Button1 {
+            width: 16vw;
+            max-width: 210px;
+        }
+        #Button2 {
+            width: 16vw;
+            max-width: 190px;
+        }
+        #Button3 {
+            width: 40vw;
+            max-width: 300px;
+        }
+        #Button4 {
+            width: 12vw;
+            max-width: 180px;
+        }
+        #Button5 {
+            width: 12vw;
+            max-width: 170px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="joyc1_hover.png" id="Button1" class="button" style="left: 10%; top: 18%;" onclick="openJoy()">
+        <img src="sf2.png" id="Button2" class="button" style="left: 10%; top: 52%;" onclick="openSF()">
+        <img src="hicncx_hover.png" id="Button3" class="button" style="left: 32%; top: 32%;" onclick="openHicncx()">
+        <img src="toolsetmain_hover.png" id="Button4" class="button" style="left: 80%; top: 49%;" onclick="openATZ()">
+        <img src="3mincnc.png" id="Button5" class="button" style="left: 79%; top: 20%;" onclick="openCNC3Min()">
+    </div>
+
+    <script>
+        function openJoy() {
+            window.open('vdo/joy.mp4', '_blank');
+        }
+        function openSF() {
+            window.open('feedandspeed.html', '_blank');
+        }
+        function openHicncx() {
+            window.open('HicncAutomation.html', '_blank');
+        }
+        function openATZ() {
+            window.open('guitoolsensor.html', '_blank');
+        }
+        function openCNC3Min() {
+            window.open('vdo/CNC3MIN2.mp4', '_blank');
+            window.open('youtubemaker.html', '_blank');
+        }
+    </script>
+</body>
+</html>
