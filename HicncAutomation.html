@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HICNCX Automation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('mainbg2.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            max-width: 1200px;
+            max-height: 720px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .button-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button {
+            width: 10vw;
+            max-width: 180px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .button:hover {
+            transform: scale(1.1);
+        }
+        .tooltip {
+            visibility: hidden;
+            width: 250px;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: pre-line;
+        }
+        .button-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <img src="data2.png" class="button" onclick="openData()">
+            <div class="tooltip">ค่าพารามิเตอร์
+รวมค่าตัวเลขที่ปรับเทียบแล้ว
+ปรับค่าได้เพื่อความแม่นยำสูงสุด
+Toolsetter Auto ปรับค่าแค่ ±0.01-1mm</div>
+        </div>
+        <div class="button-container">
+            <img src="xyzsetup2.png" class="button" onclick="openXYZSetup()">
+            <div class="tooltip">การสอบเทียบ
+ระบบสอบเทียบกึ่งอัตโนมัติ ใช้เวลาประมาณ 5 นาที
+ระบบช่วยตั้งค่าพร้อมภาพประกอบ
+ควรดูวิดีโอก่อนเริ่ม เพื่อความเข้าใจที่ดีขึ้น
+แก้ไขปัญหา 3D Probe หรือหัววัดได้ง่ายขึ้น
+เตรียมแผ่นพลาสติกแข็ง/อะลูมิเนียม และดอกสว่าน 6 มม.</div>
+        </div>
+        <div class="button-container">
+            <img src="3dprobe2.png" class="button" onclick="xyzProbe()">
+            <div class="tooltip">หัววัด (Probe)
+ระบบวัดอัตโนมัติทั้งหมด
+วัดระนาบ, แกน X/Y และความยาวเครื่องมือ
+ควบคุมได้ทั้งจอยสติ๊กและกล้อง</div>
+        </div>
+        <div class="button-container">
+            <img src="savez2.png" class="button" onclick="saveZX()">
+            <div class="tooltip">บันทึกแกน Z (Z Save)
+คำสั่งอิสระสำหรับคำนวณความสูงของชิ้นงาน (แกน Z)
+ใช้ร่วมกับการวัดความยาวเครื่องมือ</div>
+        </div>
+        <div class="button-container">
+            <img src="offset2.png" class="button" onclick="offsetXYZ()">
+            <div class="tooltip">ชดเชยแกน X/Y (XY Compensation)
+ฟังก์ชันอิสระสำหรับชดเชยค่าการวัด
+เพิ่มความแม่นยำในการตั้งตำแหน่งชิ้นงาน</div>
+        </div>
+        <div class="button-container">
+            <img src="toolset2.png" class="button" onclick="atzX()">
+            <div class="tooltip">วัดความยาวเครื่องมือ (Tool Length Measurement)
+ออกแบบให้ใช้งานแยกอิสระ
+เลือกโหมดการใช้งานตามต้องการ
+ศึกษาคู่มือก่อนใช้เพื่อความแม่นยำ</div>
+        </div>
+    </div>
+    <script>
+        function openData() { window.open('config_hicncx.html', '_blank'); }
+        function openXYZSetup() { window.open('startxyzsetup.html', '_blank'); }
+        function xyzProbe() { window.open('guiprobe_step2.html', '_blank'); }
+        function saveZX() { window.open('autozsave.html', '_blank'); }
+        function offsetXYZ() { window.open('autoxyoffset.html', '_blank'); }
+        function atzX() { window.open('guitoolsensor.html', '_blank'); }
+    </script>
+</body>
+</html>
